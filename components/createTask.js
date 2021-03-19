@@ -30,7 +30,7 @@ export const handleNewItem = (event) => {
     input.value = " "
 }
 
-const Task = ({value, formattedDate}) => {
+export const Task = ({value, formattedDate}) => {
 
     const task = document.createElement('li')
     task.classList.add('task')
