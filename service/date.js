@@ -7,3 +7,11 @@ export const removeRepeatedDates = (dates) => {
     })
     return uniqueDates
 }
+
+export const orderDates = (date) => {
+    date.sort((a, b) => {
+        const firstDate = moment(a, 'DD/MM/YYYY').format('YYYYMMDD')
+        const secondDate = moment(b, 'DD/MM/YYYY').format('YYYYMMDD')
+        return firstDate - secondDate
+    })
+}

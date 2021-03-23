@@ -1,4 +1,4 @@
-import { removeRepeatedDates } from '../service/date.js'
+import { orderDates, removeRepeatedDates } from '../service/date.js'
 import { createDate } from './createDate.js'
 
 export const loadTask = () => {
@@ -8,6 +8,7 @@ export const loadTask = () => {
 
     list.innerHTML = " "
     const uniqueDates = removeRepeatedDates(registeredTasks)
+    orderDates(uniqueDates)
     uniqueDates.forEach((day) => {
         list.appendChild(createDate(day))
     })
